@@ -1,5 +1,6 @@
 class Admin:
     def __init__(self):
+        self.name = ""
         self.username = "admin"
         self.pwd = "passw0rd"
         self.account_lock = False
@@ -8,6 +9,31 @@ class Admin:
         self.two_hundreds = 0
         self.five_hundreds = 2
         self.two_thousands = 5
+
+    
+    def show_menu(self):
+        while True:
+            self.choice = int(input("\n###################\n\
+Menu: (choose item no. like 1 or 2) \n\
+1. Check total balance\n\
+2. Cash deposit\n\
+3. Notification\n\
+4. Exit\n\n\
+\
+Choice: "))
+            print("\n----------------\n")
+
+            if self.choice == 1:
+                self.total_balance()
+            elif self.choice == 2:
+                pass
+            elif self.choice == 3:
+                pass
+            elif self.choice == 4:
+                print("Thanks you! Exiting . . .")
+                break
+            else:
+                print("\nInvalid choice. Please enter correct choice again.")
 
     
     def login(self):
@@ -35,31 +61,4 @@ class Admin:
 200 = {self.two_hundreds}\n\
 500 = {self.five_hundreds}\n\
 2000 = {self.two_thousands}")
-        
-    
-admin = Admin()
-
-while True:
-    choice = int(input("\n###################\n\
-Menu: (choose item no. like 1 or 2) \n\
-1. Check total balance\n\
-2. Cash deposit\n\
-3. Notification\n\
-4. Exit\n\n\
-\
-Choice: "))
-    print("\n----------------\n")
-
-
-    if choice == 1:
-        admin.total_balance()
-    elif choice == 2:
-        pass
-    elif choice == 3:
-        pass
-    elif choice == 4:
-        print("Thanks you! Exiting . . .")
-    else:
-        print("\nInvalid choice. Please enter correct choice again.")
-
     
