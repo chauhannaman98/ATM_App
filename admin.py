@@ -9,6 +9,7 @@ class Admin:
         self.two_hundreds = 0
         self.five_hundreds = 2
         self.two_thousands = 5
+        self.balance = 11000
 
     
     def show_menu(self):
@@ -26,7 +27,7 @@ Choice: "))
             if self.choice == 1:
                 self.total_balance()
             elif self.choice == 2:
-                pass
+                self.cash_deposit()
             elif self.choice == 3:
                 pass
             elif self.choice == 4:
@@ -55,10 +56,25 @@ Choice: "))
 
     def total_balance(self):
         if self.login():
-            print(f"Total balance = {self.hundreds*100 + self.two_hundreds*200 + self.five_hundreds*500 + self.two_thousands*2000}")
+            print(f"Total balance = {self.balance}")
             print(f"Denominations:\n\
 100 = {self.hundreds}\n\
 200 = {self.two_hundreds}\n\
 500 = {self.five_hundreds}\n\
 2000 = {self.two_thousands}")
+
+
+    def cash_deposit(self):
+        if self.login():
+            deposit_amount = int(input("Enter deposit amount: "))
+            if deposit_amount <= 300000:
+                print("Enter denominations below:")
+                self.hundreds += int(input("100: "))
+                self.two_hundreds += int(input("200: "))
+                self.five_hundreds += int(input("500: "))
+                self.two_thousands += int(input("2000: "))
+                self.balance += self.hundreds*100 + self.two_hundreds*200 + self.five_hundreds*500 + self.two_thousands*2000
+                print("Amount has been added to your account!")
+            else:
+                print("Maximum deposit limit reached of 3 lakhs.")
     
