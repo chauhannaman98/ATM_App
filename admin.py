@@ -16,10 +16,8 @@ class Admin:
         else:
             userid = input("Enter username: ")
             password = input("Enter password: ")
-            if self.username==userid and self.pwd==password and self.account_lock==False:
+            if self.username==userid and self.pwd==password:
                 return True
-            elif self.account_lock==True:
-                print("Account has been locked after failed attempts!")
             else:
                 self.no_of_attempts -= 1
                 print(f"Incorrect ID or Password! Attempt(s) left: {self.no_of_attempts}")
