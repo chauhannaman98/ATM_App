@@ -77,4 +77,8 @@ Choice: "))
                 print("Amount has been added to your account!")
             else:
                 print("Maximum deposit limit reached of 3 lakhs.")
+
+
+    def notification():
+        pass
     

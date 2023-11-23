@@ -8,11 +8,14 @@ if __name__ == "__main__":
         
         if choice == 1:
             # user
-            pass
+            user = User()
+            user.show_menu()
+            
         elif choice == 2:
             #admin
             admin = Admin()
             admin.show_menu()
+
         else:
             print("Undefined input. Exiting!")
             break
